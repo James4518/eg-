@@ -20,9 +20,16 @@ const app = new Vue({
             {id:4,
             name:'dd',
             date:'2018.6',
-            price:68,
+            price:68.00,
             count:1}
         ]
+    },
+    methods: {
+        increment(index) {
+            this.books[index].count++
+        },
+        decrement(index) {
+            this.books[index].count--
+        } 
     }
 })
-console.log(app)

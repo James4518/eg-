@@ -20,14 +20,14 @@
                 </tr>
             </thead>         
     <tobody>
-        <tr v-for="item in books">
+        <tr v-for="item,index in books">
             <td>{{item.id}}</td>
             <td>{{item.name}}</td>
             <td>{{item.date}}</td>
             <td>{{item.price}}</td>
-            <td><button>-</button>
+            <td><button @click="decrement(index)" v-bind:disabled="item.count <=1">-</button>
                 {{item.count}}
-                <button>+</button>
+                <button @click="increment(index)">+</button>
             </td>
             <td>
                 <button>移除</button>
