@@ -38,5 +38,13 @@ const app = new Vue({
                 }
                 return totalprice
             } 
+    },
+    methods: {
+        increment(index) {
+            this.books[index].count++
+        },
+        decrement(index) {
+            this.books[index].count--
+        } 
     }
 })

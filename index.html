@@ -25,9 +25,9 @@
             <td>{{item.name}}</td>
             <td>{{item.date}}</td>
             <td>{{item.price | showprice}}</td>
-            <td><button>-</button>
+            <td><button @click="decrement(index)" v-bind:disabled="item.count <= 1">-</button>
                 {{item.count}}
-                <button>+</button>
+                <button @click="increment(index)">+</button>
             </td>
             <td>
                 <button>移除</button>
