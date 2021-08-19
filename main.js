@@ -5,17 +5,17 @@ const app = new Vue({
             {id:1,
             name:'aa',
             date:'2017.10',
-            price:45,
+            price:45.00,
             count:1},
             {id:2,
             name:'bb',
             date:'2017.11',
-            price:55,
+            price:55.00,
             count:1},
             {id:3,
             name:'cc',
             date:'2018.3',
-            price:64,
+            price:64.00,
             count:1},
             {id:4,
             name:'dd',
@@ -24,12 +24,19 @@ const app = new Vue({
             count:1}
         ]
     },
-    methods: {
-        increment(index) {
-            this.books[index].count++
-        },
-        decrement(index) {
-            this.books[index].count--
-        } 
+    filters: {
+        showprice(price){
+            return "$" + price.toFixed(2) 
+        }
+    },
+    computed:{
+        totalprice(){
+            let totalprice = 0
+            for (let i in this.books) {
+                const book = this.books[i]
+                totalprice += book.price * book.count
+                }
+                return totalprice
+            } 
     }
 })
