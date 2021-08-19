@@ -45,6 +45,9 @@ const app = new Vue({
         },
         decrement(index) {
             this.books[index].count--
+        },
+        removehandle(index) {
+            this.books.splice(index,1)
         } 
     }
 })
